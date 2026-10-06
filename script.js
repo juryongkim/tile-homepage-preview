@@ -1,11 +1,22 @@
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#main-nav');
+const header = document.querySelector('.site-header');
 toggle.addEventListener('click', () => {
   const open = toggle.getAttribute('aria-expanded') !== 'true';
   toggle.setAttribute('aria-expanded', String(open));
   toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
   nav.classList.toggle('open', open);
+  header.classList.toggle('menu-open', open);
 });
+
+let lastScroll = window.scrollY;
+window.addEventListener('scroll', () => {
+  const y = Math.max(0, window.scrollY);
+  const delta = y - lastScroll;
+  if (y > 80 && Math.abs(delta) < 10) return;
+  header.classList.toggle('nav-hidden', y > 80 && delta > 0);
+  lastScroll = y;
+}, {passive: true});
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
     toggle.click();
