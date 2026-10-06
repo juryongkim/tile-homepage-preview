@@ -5,7 +5,7 @@ body{font-family:Pretendard,SUIT,sans-serif;font-size:16px;line-height:1.85}
 h1,h2,h3,.brand-name{font-family:SUIT,Pretendard,sans-serif}
 h1,h2{font-weight:650;letter-spacing:-.055em}h3{font-weight:600}
 .site-header{border-color:#e5e7df}.brand-name{letter-spacing:-.055em}
-.brand-logo{display:block;width:146px;height:auto;overflow:hidden}
+.brand-logo{display:block;width:132px;height:auto;overflow:hidden}
 .edition-label{font-size:13px;color:var(--blue);line-height:1.6;letter-spacing:-.015em;margin-bottom:22px}
 .edition-cover{display:grid;grid-template-columns:minmax(340px,37%) minmax(0,63%);max-width:1600px;margin:auto;padding:40px 0 0 48px;background:#fff}
 .cover-title{padding:65px 35px 25px 0;display:flex;align-items:flex-start;flex-direction:column}
@@ -163,7 +163,7 @@ h1,h2{font-weight:650;letter-spacing:-.055em}h3{font-weight:600}
 }
 @media(max-width:760px){
 .edition-label{font-size:11px;margin-bottom:17px}body{font-size:16px}
-.brand-logo{width:118px;height:auto}
+.brand-logo{width:108px;height:auto}
 .edition-cover{display:block;padding:0}.cover-title{padding:33px 20px 27px;display:block}
 .cover-title h1{font-size:clamp(27px,7.7vw,33px);line-height:1.35;letter-spacing:-.055em}.cover-title h1 br{display:block}
 .cover-description{font-size:16px;margin-top:19px;line-height:1.75}.cover-signature{display:none}
