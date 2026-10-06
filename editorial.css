@@ -300,9 +300,12 @@ html{scroll-padding-top:80px}
 .chemical-quality{padding:60px 0;background:var(--soft)}
 .chemical-quality>.wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:65px;align-items:center}
 .chemical-copy h2{font-size:33px;line-height:1.45}
-.chemical-copy>p:not(.edition-label):not(.chemical-fact){font-size:15px;color:#657064;margin-top:21px}
-.chemical-copy .chemical-fact{font-size:22px;color:var(--blue);font-weight:550;margin-top:26px;line-height:1.5}
-.chemical-fact span{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:6px}
+.chemical-copy>p:not(.edition-label){font-size:15px;color:#657064;margin-top:21px}
+.chemical-copy .chemical-check-label{font-size:11px!important;margin-top:24px!important;color:var(--blue)!important}
+.chemical-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;margin:11px 0 0;padding:18px 0;border-top:1px solid #ccd5c6;border-bottom:1px solid #ccd5c6;text-align:center}
+.chemical-checks li{margin:0;padding:0 6px}.chemical-checks li+li{border-left:1px solid #ccd5c6}
+.chemical-checks strong{font-size:20px;font-weight:550;line-height:1.4;color:var(--blue)}
+.chemical-checks span{display:block;font-size:11px;color:#68716a;margin-top:5px;line-height:1.6}
 .chemical-copy .quiet-link{font-size:12px;margin-top:22px}
 .chemical-quality figure img{width:100%;aspect-ratio:1.35;object-fit:cover}
 .chemical-quality figcaption{font-size:11px;color:var(--muted);margin-top:13px}
@@ -357,8 +360,9 @@ html{scroll-padding-top:80px}
   .brand-service-line{display:block;padding-top:20px;font-size:11px}.brand-service-line p{margin-top:7px}
   .chemical-quality{padding:35px 0}.chemical-quality>.wrap{display:block}
   .chemical-copy h2{font-size:28px}.chemical-copy h2 br{display:block}
-  .chemical-copy .chemical-fact{font-size:21px;margin-top:22px}
-  .chemical-copy>p:not(.edition-label):not(.chemical-fact){font-size:15px;margin-top:18px}
+  .chemical-copy .chemical-check-label{margin-top:21px!important}
+  .chemical-checks{padding:15px 0}.chemical-checks strong{font-size:18px}.chemical-checks span{font-size:10px}
+  .chemical-copy>p:not(.edition-label){font-size:15px;margin-top:18px}
   .chemical-quality figure{margin-top:25px}.chemical-quality figure img{aspect-ratio:1.5}
   .chemical-quality figcaption{font-size:10px;line-height:1.8}
 }
