@@ -1,10 +1,2 @@
-/assets/
-/derived_images/
-/planning_v2/
-/reference_board/
-/source_photos/
-/templates/
-/IMAGE_PROMPTS.md
-/WEBSITE_PREPARATION.md
-/.agents/
-/.codex/
+Thumbs.db
+.DS_Store
