@@ -130,6 +130,88 @@
 .facility-hero h1{font-size:46px;font-weight:800;line-height:1.3}
 .facility-hero .wrap>p{font-size:17px;color:#526056;line-height:1.8;margin-top:24px}
 .space-decision{background:#edf1e9}.space-decision .wrap>p:not(.image-context){max-width:900px}
+/* Confirmed service promises and one continuous application guide. */
+.service-promises{background:var(--soft)}
+.service-promises .sales-heading h2{font-size:34px}
+.promise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.promise-grid article{min-width:0}
+.promise-grid h3{font-size:26px;font-weight:800;line-height:1.4;letter-spacing:-.04em;margin-bottom:22px;min-height:2.8em}
+.promise-grid .field-photo img{aspect-ratio:1.5}
+.promise-grid article>p{font-size:16px;color:#49564d;line-height:1.75;margin-top:20px}
+.promise-grid .quiet-link{margin-top:17px;font-weight:650}
+.risk-evidence-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:55px;align-items:center}
+.risk-evidence-layout+.risk-consequences{margin-top:45px}
+.risk-summary{font-weight:750;color:var(--deep)!important}
+.accident-evidence{min-width:0}
+.accident-evidence>figcaption{font-size:18px;font-weight:750;line-height:1.5;margin-bottom:25px}
+.accident-plot{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;align-items:center}
+.accident-donut{width:210px;height:210px;position:relative;border-radius:50%;background:conic-gradient(#456250 0 67.6%,#b47736 67.6% 78.8%,#dde3d8 78.8% 100%)}
+.accident-donut>div{position:absolute;inset:29px;background:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.accident-donut strong{font-size:38px;font-weight:800;line-height:1.1;color:var(--deep);letter-spacing:-.04em}
+.accident-donut strong span{font-size:19px;margin-left:2px}
+.accident-donut p{font-size:15px;font-weight:650;margin-top:7px}
+.accident-legend{margin:0}
+.accident-legend>div+div{margin-top:18px}
+.accident-legend dt{font-size:15px;font-weight:650;line-height:1.5}
+.accident-legend dt:before{content:'';display:inline-block;width:9px;height:9px;background:#456250;margin-right:8px}
+.accident-legend .cause-fall dt:before{background:#b47736}.accident-legend .cause-other dt:before{background:#dde3d8}
+.accident-legend dd{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:3px 0 0 17px;line-height:1.5}
+.accident-legend dd strong{font-size:22px;font-weight:800}.accident-legend dd span{font-size:13px;color:#526056}
+.chart-scope{font-size:13px;color:#526056;line-height:1.7;margin-top:23px}
+.chart-source{font-size:12px;color:#526056;line-height:1.7;margin-top:9px}.chart-source a{text-decoration:underline;text-underline-offset:3px}
+.application-intro{padding-bottom:42px}
+.application-service{border-top:1px solid #bcc7b8;padding-top:22px;display:flex;flex-wrap:wrap;gap:8px 30px;align-items:baseline}
+.application-service strong{font-size:21px;color:var(--deep);font-weight:750}.application-service span{font-size:15px;color:#526056}
+.application-block:nth-of-type(even){background:var(--soft)}
+.application-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:58px;align-items:center}
+.application-block:nth-of-type(odd) .application-copy{grid-column:2;grid-row:1}.application-block:nth-of-type(odd) .field-photo{grid-column:1;grid-row:1}
+.application-copy{min-width:0}.space-category{font-size:16px;font-weight:750;color:var(--blue);margin-bottom:16px}
+.application-copy h2{font-size:clamp(30px,3vw,40px);font-weight:800;line-height:1.3;letter-spacing:-.045em}
+.application-copy>p:not(.space-category):not(.application-evidence){font-size:16px;line-height:1.8;color:#49564d;margin-top:24px}
+.application-points{list-style:none;padding:0;margin:25px 0 0;border-top:1px solid #bcc7b8}
+.application-points li{font-size:15px;line-height:1.7;color:#526056;padding:14px 0;border-bottom:1px solid #d3dacd;margin:0}
+.application-points strong{display:block;font-size:16px;font-weight:750;color:var(--ink);margin-bottom:3px}
+.application-evidence{font-size:14px;line-height:1.7;margin-top:22px;color:var(--deep);font-weight:600}.application-evidence a{text-decoration:underline;text-underline-offset:4px}
+.application-finish{background:var(--pale)}
+.safety-risk{background:var(--soft);padding-top:62px}
+.safety-risk .accident-donut>div{background:var(--soft)}
+.sample-checklist{list-style:none;padding:0;margin:25px 0 0;border-top:1px solid #bcc7b8;counter-reset:check}
+.sample-checklist li{position:relative;counter-increment:check;padding:15px 0 15px 29px;margin:0;border-bottom:1px solid #d3dacd;font-size:15px;line-height:1.7;color:#526056}
+.sample-checklist li:before{content:counter(check);position:absolute;left:0;font-weight:750;color:var(--blue)}
+.sample-checklist strong{display:block;color:var(--ink);font-size:17px;font-weight:750;margin-bottom:3px}
+.institutional-measurement{background:var(--pale)}
+.safety-aftercare{background:var(--soft)}
+@media(max-width:1100px){
+  .promise-grid{gap:24px}.promise-grid h3{font-size:23px}
+  .risk-evidence-layout{grid-template-columns:1fr;gap:35px}.accident-evidence{max-width:650px}
+  .application-layout{gap:35px}.application-copy h2{font-size:32px}
+}
+@media(max-width:900px){
+  .application-layout{grid-template-columns:1fr;gap:26px}
+  .application-block .application-copy,.application-block:nth-of-type(odd) .application-copy{grid-column:1;grid-row:1}
+  .application-block .field-photo,.application-block:nth-of-type(odd) .field-photo{grid-column:1;grid-row:2}
+}
+@media(max-width:760px){
+  .service-promises .sales-heading h2{font-size:28px}.promise-grid{grid-template-columns:1fr;gap:32px}
+  .promise-grid article+article{border-top:1px solid #c7d0c1;padding-top:29px}
+  .promise-grid h3{font-size:25px;min-height:0;margin-bottom:18px}.promise-grid h3 br{display:none}
+  .promise-grid .field-photo img{aspect-ratio:1.6}.promise-grid article>p{margin-top:16px}
+  .risk-evidence-layout{gap:30px}.risk-evidence-layout+.risk-consequences{margin-top:30px}
+  .accident-evidence>figcaption{font-size:17px;margin-bottom:20px}
+  .accident-plot{grid-template-columns:140px minmax(0,1fr);gap:22px}
+  .accident-donut{width:140px;height:140px}.accident-donut>div{inset:19px}
+  .accident-donut strong{font-size:29px}.accident-donut strong span{font-size:15px}.accident-donut p{font-size:13px;margin-top:5px}
+  .accident-legend dt{font-size:14px}.accident-legend dd{margin-left:17px;gap:1px 8px}.accident-legend dd strong{font-size:20px}.accident-legend dd span{font-size:12px}
+  .accident-legend>div+div{margin-top:12px}.chart-scope{font-size:12px;margin-top:20px}.chart-scope br{display:none}.chart-source{font-size:11px}
+  .application-intro{padding-bottom:32px}.application-service{display:block;padding-top:20px}.application-service strong{display:block;font-size:19px}.application-service span{display:block;font-size:14px;margin-top:7px}
+  .space-category{font-size:15px;margin-bottom:13px}.application-copy h2{font-size:30px}
+  .application-copy>p:not(.space-category):not(.application-evidence){margin-top:21px}.application-points{margin-top:21px}.application-points li{padding:13px 0}
+  .application-evidence{font-size:13px;margin-top:19px}.safety-risk{padding-top:38px}
+}
+@media(max-width:359px){
+  .accident-plot{grid-template-columns:115px minmax(0,1fr);gap:14px}.accident-donut{width:115px;height:115px}.accident-donut>div{inset:16px}.accident-donut strong{font-size:25px}.accident-legend dt{font-size:13px}.accident-legend dd{margin-left:0}.accident-legend dd strong{font-size:18px}
+  .application-copy h2{font-size:27px}.promise-grid h3{font-size:23px}
+}
 @media(min-width:1600px){.campaign-cover .hero-slides{height:740px}}
 @media(max-width:1100px){
   .field-feature,.science-stage,.solution-layout,.sample-story-layout{gap:35px}
