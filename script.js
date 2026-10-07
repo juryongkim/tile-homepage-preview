@@ -28,7 +28,7 @@ const slides = [...document.querySelectorAll('.hero-slide')];
 if (slides.length) {
   const dots = [...document.querySelectorAll('.slide-dot')];
   const pause = document.querySelector('.slide-pause');
-  const captions = ['호텔 · 대형 로비', '수영장 · 물기가 닿는 공간', '관공서 · 기업 공용시설'];
+  const captions = ['호텔 · 로비', '수영장 · 물기가 닿는 공간', '관공서 · 기업 공용시설'];
   let current = 0;
   let playing = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let timer;
