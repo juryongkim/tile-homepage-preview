@@ -28,7 +28,7 @@ const slides = [...document.querySelectorAll('.hero-slide')];
 if (slides.length) {
   const dots = [...document.querySelectorAll('.slide-dot')];
   const pause = document.querySelector('.slide-pause');
-  const captions = ['호텔 · 로비', '수영장 · 물기가 닿는 공간', '관공서 · 기업 공용시설'];
+  const captions = ['표면 식각 · 전용 약제 분사', '호텔 · 로비', '수영장 · 물기가 닿는 공간'];
   let current = 0;
   let playing = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let timer;
@@ -50,6 +50,32 @@ if (slides.length) {
   document.addEventListener('visibilitychange', schedule);
   schedule();
 }
+
+document.querySelectorAll('.surface-demo').forEach(demo => {
+  const tabs = [...demo.querySelectorAll('[data-surface]')];
+  const select = tab => {
+    tabs.forEach(item => {
+      const active = item === tab;
+      item.setAttribute('aria-selected', String(active));
+      item.tabIndex = active ? 0 : -1;
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
+    });
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', event => {
+      let target;
+      if (event.key === 'ArrowRight') target = tabs[(index + 1) % tabs.length];
+      if (event.key === 'ArrowLeft') target = tabs[(index + tabs.length - 1) % tabs.length];
+      if (event.key === 'Home') target = tabs[0];
+      if (event.key === 'End') target = tabs[tabs.length - 1];
+      if (!target) return;
+      event.preventDefault();
+      select(target);
+      target.focus();
+    });
+  });
+});
 
 document.querySelectorAll('.work-slider').forEach(slider => {
   const scenes = [...slider.querySelectorAll('.work-slide')];
