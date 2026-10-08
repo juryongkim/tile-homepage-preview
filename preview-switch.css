@@ -8,5 +8,6 @@ body.has-preview-switch{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
 .has-preview-switch .quick-actions{bottom:calc(84px + env(safe-area-inset-bottom))}
 .has-preview-switch .top{bottom:calc(85px + env(safe-area-inset-bottom))}
 .has-preview-switch .floating-contact{bottom:calc(135px + env(safe-area-inset-bottom))}
-@media(max-width:600px){.preview-switch{gap:7px;padding-inline:12px}.preview-switch>span{font-size:10px;margin-right:2px}.preview-switch a{min-width:0;flex:1;max-width:130px;padding:8px 9px;gap:6px;font-size:14px}.preview-switch small{font-size:10px}}
+@media(max-width:600px){.preview-switch{gap:7px;padding-inline:12px}.preview-switch>span{display:none}.preview-switch a{min-width:0;flex:1;max-width:150px;padding:8px 9px;gap:6px;font-size:14px}.preview-switch small{font-size:10px}}
 @media print{.preview-switch{display:none}body.has-preview-switch{padding-bottom:0}}
+@media(max-width:359px){.preview-switch a{white-space:nowrap}.preview-switch small{display:none}}
