@@ -92,6 +92,24 @@ document.querySelectorAll('.reaction-demo').forEach(lab=>{
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
 });
 
+// Venue cards settle into a readable grid once they enter the viewport.
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ document.querySelectorAll('.venue-showcase').forEach(grid=>{
+  const cards=[...grid.querySelectorAll('.venue-card')];
+  let remaining=cards.length;
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    entry.target.classList.add('is-visible');
+    observer.unobserve(entry.target);
+    if(--remaining===0)observer.disconnect();
+   });
+  },{threshold:.12});
+  grid.classList.add('motion-ready');
+  cards.forEach(card=>observer.observe(card));
+ });
+}
+
 const form = document.querySelector('#consult-form');
 // Technical links open the relevant answer, including when entered from another page.
 const openLinkedAnswer = () => {
