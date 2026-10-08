@@ -5,3 +5,4 @@
 @media(max-width:760px){.c-header>.c-brand{gap:8px;font-size:21px}.c-header .brand-symbol{width:28px;height:28px}.c-header{height:56px}.c-header .c-mobile-nav{height:42px;font-size:12px}.c-header .c-mobile-nav a{height:42px;padding-inline:10px}#main{padding-top:42px}.c-quick-actions{right:6px}}
 @media(prefers-reduced-motion:reduce){.c-header .c-mobile-nav{transition:none}}
 @media print{.c-quick-actions,.c-header .c-mobile-nav{display:none}#main{padding-top:0}}
+.contact-number{display:block;font-size:20px;line-height:1.5;font-weight:650;letter-spacing:-.025em;font-variant-numeric:tabular-nums;margin-top:16px;color:#4e5968}.c-contact .contact-number{width:fit-content;margin-inline:auto}
