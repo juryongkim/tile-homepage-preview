@@ -37,15 +37,6 @@ caseFilters.forEach(b=>b.addEventListener('click',()=>{const url=new URL(locatio
 filterCases(new URLSearchParams(location.search).get('category'));
 openPortfolio();
 window.addEventListener('popstate',()=>filterCases(new URLSearchParams(location.search).get('category')));
-const consultation=document.querySelector('#consult-form');
-if(consultation){
- const params=new URLSearchParams(location.search),space=params.get('space'),caseName=params.get('case');
- const spaceMap={'관공서·기업·상업시설':'관공서·기업','학교·유치원':'유치원·학교','요양·재활·복지시설':'요양원·병원'};
- if(space){const select=consultation.querySelector('[name="space"]');const value=spaceMap[space]||space;if([...select.options].some(o=>o.value===value))select.value=value;}
- if(params.get('purpose')==='aftercare')consultation.querySelector('[name="request"]').value='유지관리';
- if(space||caseName){const context=document.createElement('p');context.className='consult-context';context.textContent=caseName?`살펴본 사례: ${caseName}`:`상담할 공간: ${space}`;consultation.prepend(context);if(caseName)consultation.querySelector('[name="situation"]').value=`${caseName} 적용 사례를 보고 문의합니다. `;}
-}
-document.querySelectorAll('.faq-wrap details[id]').forEach(detail=>{if(location.hash==='#'+detail.id)detail.open=true;});
 const stage=document.querySelector('.grip-stage');
 if(stage){
   const button=stage.querySelector('.detail-button');
@@ -108,51 +99,4 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   grid.classList.add('motion-ready');
   cards.forEach(card=>observer.observe(card));
  });
-}
-
-const form = document.querySelector('#consult-form');
-// Technical links open the relevant answer, including when entered from another page.
-const openLinkedAnswer = () => {
-  const target = document.getElementById(location.hash.slice(1));
-  if (target && target.tagName === 'DETAILS') target.open = true;
-};
-openLinkedAnswer();
-window.addEventListener('hashchange', openLinkedAnswer);
-
-if (form) {
-  let memo = '';
-  const status = document.querySelector('#memo-status');
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const value = name => String(data.get(name) || '').trim() || '상담 시 확인';
-    memo = `닥터 논슬립 · 현장 방문 상담 메모\n\n상담 희망 내용: ${value('request')}\n공간 유형: ${value('space')}\n지역: ${value('region')}\n대략적인 규모: ${value('area')}\n방문 희망 일정: ${value('schedule')}\n\n미끄러운 상황\n${value('situation')}\n\n기존 코팅·왁스 / 청소 방식\n${value('care')}\n\n준비된 참고자료: ${data.getAll('photos').join(', ') || '없음 · 현장 방문으로 확인 희망'}\n\n※ 이 메모는 상담 접수 내역이 아닙니다. 상담 채널 연결 후 전달해 주세요. 사진은 선택 사항입니다.`;
-    document.querySelector('#consult-memo').textContent = memo;
-    document.querySelector('#consult-result').hidden = false;
-    status.textContent = '메모를 정리했습니다. 내용을 복사하거나 저장할 수 있습니다.';
-  });
-  document.querySelector('#copy-memo').addEventListener('click', async () => {
-    let copyTimer;
-    try {
-      await Promise.race([
-        navigator.clipboard.writeText(memo),
-        new Promise((_, reject) => { copyTimer = setTimeout(reject, 1500); })
-      ]);
-      status.textContent = '상담 메모를 복사했습니다.';
-    } catch {
-      const range = document.createRange();
-      range.selectNodeContents(document.querySelector('#consult-memo'));
-      const selection = window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(range);
-      status.textContent = '자동 복사를 사용할 수 없어 메모를 선택했습니다. 선택된 내용을 복사해 주세요.';
-    } finally { clearTimeout(copyTimer); }
-  });
-  document.querySelector('#save-memo').addEventListener('click', () => {
-    const url = URL.createObjectURL(new Blob(['\uFEFF' + memo], {type:'text/plain;charset=utf-8'}));
-    const link = document.createElement('a');
-    link.href = url; link.download = '닥터논슬립-상담메모.txt'; link.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    status.textContent = '상담 메모 저장을 시작했습니다.';
-  });
 }
