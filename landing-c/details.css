@@ -5,3 +5,5 @@
 
 .venue-logo{height:100px;display:flex;align-items:center;justify-content:center;margin-bottom:15px}.case-logo-card .venue-logo img{margin:0;max-height:75px}.venue-logo.dark-logo{background:#285480;border-radius:12px;padding:18px}.case-logo-card h3{font-size:15px;line-height:1.5;margin-bottom:6px}.case-logo-card .venue-name+h3{display:none}.case-logo-card .venue-name{font-size:23px;margin-bottom:20px}.case-controls button:disabled{opacity:.35;cursor:default}.case-rail:focus-visible{outline:3px solid #3182f6;outline-offset:5px}.reading-result>b{white-space:nowrap}
 @media(max-width:760px){.reading-result>b{font-size:48px}.c-header nav{font-size:16px}}
+
+.case-logo-card .venue-logo img{width:auto;max-width:100%;height:auto;max-height:60px}.venue-logo.dark-logo img{max-height:52px}
